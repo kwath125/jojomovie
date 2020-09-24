@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace는 MemberMapper 인터페이스 이름으로 설정 -->
+<mapper namespace="com.example.mapper.MemberMapper">
+
+	<insert id="insert"><!-- id속성은 메소드 이름 -->
+		INSERT INTO member
+		(user_id,passwd,name,user_email,birthday,user_addr,phone,point,grade)
+		VALUES (#{userId}, #{passwd}, #{name}, #{userEmail}, #{birthday},
+		#{userAddr}, #{phone}, #{point}, #{grade})
+	</insert>
+
+
+	<update id="update">
+		UPDATE member
+		SET name=#{name}, passwd=#{passwd}, email=#{email}, address=#{address},
+		phone=#{phone}, birthday=#{birthday}
+		WHERE user_id = #{userId}
+	</update>
+
+
+</mapper>
+
+
+
+
+
